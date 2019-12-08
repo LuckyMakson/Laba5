@@ -1,7 +1,5 @@
 package sample.Classes;
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.function.IntFunction;
 
 public class Investors extends ArrayList<Investor> {
@@ -50,15 +48,14 @@ public class Investors extends ArrayList<Investor> {
         }
         return sublist;
     }
-    public Investors deleteWithFIO(String FIO) {
+    public ArrayList<Investor> deleteWithFIO(String FIO) {
         for (Investor investor : this.list2) {
             if (investor.FIO.equals(FIO))
-            {
                 this.list2.remove(investor);
-            }
         }
-        return (Investors) this.list2;
+        return this.list2;
     }
+
 
     @Override
     public String toString() {

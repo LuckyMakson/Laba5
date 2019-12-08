@@ -184,11 +184,11 @@ public class Controller {
 
     @FXML
     void deleteFromList(ActionEvent event) {
-        Investors sublist=new Investors();
+        ArrayList<Investor> sublist=new ArrayList<Investor>();
 
         sublist = investors.deleteWithFIO(txtDelete.getText());
         investors.clear();
-        investors=sublist;
+        investors= (Investors) sublist;
         addToTable();
     }
 

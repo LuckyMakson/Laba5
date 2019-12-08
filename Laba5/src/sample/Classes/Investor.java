@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public class Investor implements Serializable {
     String FIO;
-    String contractNumber;
+    StringProperty contractNumber;
     String address;
     int deposit;
     int contractTerm;
@@ -27,7 +27,7 @@ public class Investor implements Serializable {
         return FIO;
     }
 
-    public String getContractNumber() {
+    public StringProperty getContractNumber() {
         return contractNumber;
     }
 
@@ -48,7 +48,7 @@ public class Investor implements Serializable {
     }
 
     public void setContractNumber(String contractNumber) {
-        this.contractNumber = contractNumber;
+        this.contractNumber = new SimpleStringProperty(contractNumber);
     }
 
     public void setAddress(String address) {
@@ -64,7 +64,7 @@ public class Investor implements Serializable {
     }
 
     public static boolean CheckCorrectFIO(String str) {
-        return str.matches("[А-Я][а-я]{2,}[ ][А-Я][а-я]{2,}[ ][А-Я][а-я]{2,}");
+        return str.matches("^[A-Z]([a-z -]{0,})");
     }
 
     public static boolean CheckCorrectNumber(String str) {
